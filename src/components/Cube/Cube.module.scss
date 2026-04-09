@@ -1,0 +1,50 @@
+$size: 200px;
+$opacity: 0.8;
+
+.scene {
+  width: $size;
+  height: $size;
+  perspective: 600px; // Cria a profundidade de campo
+  margin: 100px auto;
+}
+
+.cube {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d; // Essencial para o 3D funcionar
+  transform: rotateX(-15deg) rotateY(-15deg);
+  animation: rotateCube 8s infinite linear;
+}
+
+.face {
+  position: absolute;
+  width: $size;
+  height: $size;
+  border: 2px solid #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: sans-serif;
+  font-weight: bold;
+  color: white;
+  background: rgba(52, 152, 219, $opacity);
+}
+
+img{
+    width: 100%;
+    height: 100%;
+}
+
+// Posicionamento das faces
+.front  { transform: rotateY(  0deg) translateZ(calc($size / 2)); }
+.back   { transform: rotateY(180deg) translateZ(calc($size / 2)); background: rgba(231, 76, 60, $opacity); }
+.right  { transform: rotateY( 90deg) translateZ(calc($size / 2)); background: rgba(46, 204, 113, $opacity); }
+.left   { transform: rotateY(-90deg) translateZ(calc($size / 2)); background: rgba(241, 196, 15, $opacity); }
+.top    { transform: rotateX( 90deg) translateZ(calc($size / 2)); background: rgba(155, 89, 182, $opacity); }
+.bottom { transform: rotateX(-90deg) translateZ(calc($size / 2)); background: rgba(52, 73, 94, $opacity); }
+
+@keyframes rotateCube {
+  from { transform: rotateX(0deg) rotateY(0deg); }
+  to   { transform: rotateX(360deg) rotateY(360deg); }
+}
