@@ -1,0 +1,20 @@
+.card{
+    background: url("/imgs/bg.jpeg");
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    background-repeat: no-repeat;
+
+
+    p,h3,a{
+        background: radial-gradient(blue, magenta);
+    }
+
+    a{
+        color: white;
+    }
+
+    img{
+        width: 500px;
+    }
+}

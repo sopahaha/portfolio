@@ -1,72 +1,162 @@
-body{
-  background: linear-gradient(120deg, magenta,blue,lime, yellow, orange);
+// Importando uma fonte que grita "internet antiga"
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:bold&family=Comic+Neue:wght@700&display=swap');
+
+body {
+  // Gradiente psicodélico que dói no olho
+  background: linear-gradient(120deg, magenta, blue, lime, yellow, orange);
+  background-attachment: fixed;
+  font-family: 'Comic Neue', sans-serif; // A rainha do caos
+  cursor: help;
+  overflow-x: hidden;
 }
 
+// Estilo para o <hr> virar uma linha de construção
+hr {
+  border: 5px dotted red;
+  background-color: yellow;
+  height: 10px;
+}
 
-header.navbar{
+header.navbar {
   top: 0;
   width: 100%;
   position: fixed;
-  background-color: #00000075;
+  background-color: rgba(0, 255, 0, 0.7); // Verde radioativo semi-transparente
   z-index: 1000;
-  nav{
+  border-bottom: 10px double black;
+  
+  nav {
     display: flex;
     justify-content: space-between;
     padding: 0.8rem 2em;
+    align-items: center;
 
-    a{
-      color: white;
-      text-decoration: overline;
+    a {
+      color: blue;
+      font-size: 1.5rem;
+      text-decoration: underline wavy red; // Sublinhado ondulado
+      background: white;
+      padding: 5px;
+      
+      &:hover {
+        background: black;
+        color: white;
+      }
     }
     
-    ul{
+    ul {
       list-style: georgian;
       list-style-position: inside;
       display: flex;
       gap: 1rem;
-
+      
+      li a {
+        font-family: 'Courier Prime', monospace;
+      }
     }
   }
 }
 
-section.home{
-
-  padding-top: 4rem;
-
-  height: 100vh;
+section.home {
+  padding-top: 10rem;
+  min-height: 100vh;
+  text-align: center;
+  background-image: url('https://www.transparenttextures.com/patterns/cubes.png'); // Textura de fundo
   
-  h1{
+  h1 {
     display: flex;
     flex-direction: column;
     color: greenyellow;
-    font-size: 4rem;
+    font-size: 8rem; // Gigante
+    text-shadow: 5px 5px 0px red, -5px -5px 0px blue;
+    transform: skewY(-5deg); // Torto
+    
+    span:nth-child(2) {
+      color: white;
+      background: black;
+      width: fit-content;
+      margin: 0 auto;
+    }
   }
 }
 
-
-section.sobre{
+section.sobre {
   display: flex;
-  height: 100vh;
-
+  min-height: 100vh;
   justify-content: center;
   align-items: center;
   padding: 0 4rem;
+  border: 20px outset silver; // Efeito de botão antigo
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: invert(1); // Inverte as cores do fundo pra confundir
 
-  h2{
-    font-size: 2rem;
+  h2 {
+    font-size: 5rem;
+    color: yellow;
+    -webkit-text-stroke: 2px black;
+    text-transform: uppercase;
   }
   
-  p,h2{
+  p {
+    font-size: 1.5rem;
+    background: white;
+    color: black;
+    padding: 1rem;
+    border: 3px dashed black;
     margin-bottom: 2rem;
+    box-shadow: 15px 15px 0px rgba(0,0,0,0.5);
   }
 
-  > div{
-  
+  > div {
     width: 50%;
+    z-index: 2;
   }
 }
 
+section.projetos {
+  display: flex;
+  flex-direction: column; // Coloquei column pra o H2 aparecer em cima
+  align-items: center;
+  padding: 10rem 0;
+  width: 100%;
+  background: repeating-linear-gradient(45deg, transparent, transparent 20px, rgba(255,255,255,0.1) 20px, rgba(255,255,255,0.1) 40px);
 
-section.projetos{
-  height: 100vh;
+  h2 {
+    font-size: 6rem;
+    animation: blink 0.5s infinite; // Efeito pisca-pisca de site antigo
+  }
+  
+  .lista.de.projetos {
+    width: 100%;
+    gap: 4rem;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    list-style: none;
+
+    li {
+       transform: rotate(calc(var(--rotation, 2deg)));
+       &:nth-child(even) { --rotation: -3deg; }
+       &:hover { transform: scale(1.2) rotate(0deg); z-index: 10; }
+    }
+  }
+}
+
+section.contato, footer {
+  background: black;
+  color: lime;
+  padding: 5rem;
+  text-align: center;
+  font-family: 'Courier Prime', monospace;
+  border-top: 10px solid white;
+
+  h2 { font-size: 3rem; }
+}
+
+// Keyframes para o puro suco do caos
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
 }
