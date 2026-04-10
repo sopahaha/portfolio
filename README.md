@@ -7,4 +7,4 @@
 - link para portfolio true
 - target blank nos links
 - todas animacoes com framer motion
-  
+- algum padrao no codigo (opcional)
