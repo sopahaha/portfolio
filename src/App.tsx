@@ -35,10 +35,6 @@ function App() {
           </h1>
         </section>
 
-        <hr />
-        <marquee> 🏃‍♂️💨 CORRE QUE O SITE TÁ CARREGANDO!!! 🏃‍♂️💨 </marquee>
-        <hr />
-
         <section className="sobre" id="sobre">
           <div>
             <h2>💾 SOBRE EU 💾</h2>
